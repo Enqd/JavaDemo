@@ -43,7 +43,7 @@ public class HashMapDemo1 {
 }
 
 //学生类
-class Student{
+class Student implements Comparable<Student>{
 
     //属性
     public String name;
@@ -91,5 +91,24 @@ class Student{
 
     public String toString() {
         return "Student{name = " + name + ", age = " + age + "}";
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        // 按照学生年龄的升序排列，年龄一样按照姓名的字母排列，同姓名年龄视为同一个人。
+
+        // this：表示当前要添加的元素
+        // o：表示已经在红黑树中存在的元素
+
+        // 返回值：
+        // 负数：表示当前要添加的元素是小的，存左边
+        // 正数：表示当前要添加的元素是大的，存右边
+        // 0：表示当前要添加的元素已经存在，舍弃
+
+        if(this.getAge() == o.getAge()){
+            return this.getName().compareTo(o.getName());//这里的compareTo是String内置的比较字符串的方法，重写的compareTo方法传入的是Student对象
+        }else{
+            return this.getAge() - o.getAge();
+        }
     }
 }
