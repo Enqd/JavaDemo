@@ -52,7 +52,7 @@ class Student implements Comparable<Student>{
     //构造函数
     //隐式
     public Student() {
-    };
+    }
 
     //显示
     public Student(String name, int age) {
