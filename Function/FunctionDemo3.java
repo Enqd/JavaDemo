@@ -3,7 +3,6 @@ package Function;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class FunctionDemo3 {
@@ -35,58 +34,3 @@ public class FunctionDemo3 {
     }
 }
 
-class Student {
-    public String name;
-    public int age;
-
-
-    public Student() {
-    }
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public Student(String str) {
-        //构造方法引用的时候,只需要保证构造方法生成的对象跟抽象方法的返回值一致即可
-        this.name = str.split(",")[0];
-        this.age = Integer.parseInt(str.split(",")[1]);
-    }
-
-    /**
-     * 获取
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 设置
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 获取
-     * @return age
-     */
-    public int getAge() {
-        return age;
-    }
-
-    /**
-     * 设置
-     * @param age
-     */
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String toString() {
-        return "Student{name = " + name + ", age = " + age + "}";
-    }
-}
